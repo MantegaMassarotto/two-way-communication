@@ -85,7 +85,7 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
     
     @objc func pressedLogin() {
 
-        let path = "http://192.168.0.129:8080/" + "login" + "?osType=ios&deviceId=1bebd0-9212-hewh2&country=US"
+        let path = "http://192.168.0.129:3000/" + "login"
     
         let myURL = URL(string:path)
         let myRequest = URLRequest(url: myURL!)
