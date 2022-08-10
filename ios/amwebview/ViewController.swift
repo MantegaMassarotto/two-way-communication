@@ -61,7 +61,6 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
         
         let contentController = webView.configuration.userContentController
         contentController.add(self, name: "sendMessage")
-        contentController.add(self, name: "onBack")
 
         btnCreateAccount.addTarget(self, action: #selector(pressedManageAccount), for: .touchUpInside)
 
