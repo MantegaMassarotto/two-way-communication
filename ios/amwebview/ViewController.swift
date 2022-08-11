@@ -17,15 +17,12 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
             // make sure this JSON is in the format we expect
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 // try to read out a string array
-                if let topic = json["topic"] as? String {
+                if let data = json["data"] as? String {
                     webView.isHidden = true
+                    btnLogin.isHidden = true
+                    btnLogout.isHidden = false
                     
-                    if !isLoggedIn && topic == "onLogin" {
-                        btnLogin.isHidden = true
-                        btnCreateAccount.isHidden = false
-                        btnReaccept.isHidden = false
-                        isLoggedIn = true
-                    }
+                    textToken.text = data;
                 }
             }
         } catch let error as NSError {
@@ -33,18 +30,16 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
         }
     }
 
-    @IBOutlet weak var btnCreateAccount: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var btnReaccept: UIButton!
-    
+    @IBOutlet weak var textToken: UILabel!
+    @IBOutlet weak var btnLogout: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         webView.isHidden = true
-        btnCreateAccount.isHidden = true
-        btnReaccept.isHidden = true
         btnLogin.isHidden = false
+        btnLogout.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -61,32 +56,18 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
         
         let contentController = webView.configuration.userContentController
         contentController.add(self, name: "sendMessage")
+        contentController.add(self, name: "onBack")
 
-        btnCreateAccount.addTarget(self, action: #selector(pressedManageAccount), for: .touchUpInside)
 
         btnLogin.addTarget(self, action: #selector(pressedLogin), for: .touchUpInside)
-        
-        btnReaccept.addTarget(self, action: #selector(pressedReacceptTerms), for: .touchUpInside)
-        
-    }
-    
-    @objc func pressedManageAccount() {
-
-        let path = "http://192.168.0.129:8080/" + "manageaccount" + "?osType=ios&deviceId=1bebd0-9212-hewh2&country=US"
-    
-        let myURL = URL(string:path)
-        let myRequest = URLRequest(url: myURL!)
-    
-        webView.load(myRequest);
-        
-        webView.isHidden = false
+        btnLogout.addTarget(self, action: #selector(pressedLogout), for: .touchUpInside)
     }
     
     @objc func pressedLogin() {
 
-        let path = "http://192.168.0.129:3000/" + "login"
+        let url = "http://192.168.0.129:3000/" + "login" + "?osType=ios"
     
-        let myURL = URL(string:path)
+        let myURL = URL(string:url)
         let myRequest = URLRequest(url: myURL!)
     
         webView.load(myRequest);
@@ -94,17 +75,10 @@ class ViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler {
         webView.isHidden = false
     }
     
-    @objc func pressedReacceptTerms() {
-
-        let path = "http://192.168.0.129:8080/" + "verifyemailchange" + "?token=1234"
-
-    
-        let myURL = URL(string:path)
-        let myRequest = URLRequest(url: myURL!)
-    
-        webView.load(myRequest);
-        
-        webView.isHidden = false
+    @objc func pressedLogout() {
+        textToken.isHidden = true
+        btnLogin.isHidden = false
+        btnLogout.isHidden = true
     }
     
     private lazy var webView: WKWebView = {

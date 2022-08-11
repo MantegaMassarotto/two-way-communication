@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,38 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-NU-EcI">
-                                <rect key="frame" x="171" y="364" width="77" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Edit Perfil"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msx-2C-H6d">
+                                <rect key="frame" x="181" y="430" width="52" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msx-2C-H6d">
-                                <rect key="frame" x="185" y="431" width="44" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Login"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWu-gC-tlJ">
-                                <rect key="frame" x="177" y="503" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reaccept"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Two-way APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uog-Xi-vCO">
-                                <rect key="frame" x="86" y="117" width="243" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uog-Xi-vCO">
+                                <rect key="frame" x="168" y="129" width="78.333333333333314" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuJ-8W-3sz">
+                                <rect key="frame" x="10" y="328" width="393" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="gO0-ga-lQc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNb-df-Aze">
+                                <rect key="frame" x="174" y="467" width="66" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="nuJ-8W-3sz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ILv-Zh-NcH"/>
+                            <constraint firstItem="msx-2C-H6d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NbP-nq-VBm"/>
+                            <constraint firstItem="uog-Xi-vCO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="UV9-Kp-2Gl"/>
+                            <constraint firstItem="xNb-df-Aze" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kQn-LL-LpJ"/>
+                            <constraint firstItem="msx-2C-H6d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lhM-3e-t4I"/>
+                            <constraint firstItem="xNb-df-Aze" firstAttribute="top" secondItem="msx-2C-H6d" secondAttribute="bottom" constant="1" id="n6j-aO-kVq"/>
+                            <constraint firstItem="msx-2C-H6d" firstAttribute="top" secondItem="nuJ-8W-3sz" secondAttribute="bottom" constant="8" symbolic="YES" id="vR5-tz-N53"/>
+                            <constraint firstItem="nuJ-8W-3sz" firstAttribute="centerX" secondItem="msx-2C-H6d" secondAttribute="centerX" id="wgP-py-5g7"/>
+                            <constraint firstItem="uog-Xi-vCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xcw-9m-yu8"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnCreateAccount" destination="iY9-NU-EcI" id="HqO-hn-dyc"/>
                         <outlet property="btnLogin" destination="msx-2C-H6d" id="bs4-F0-dBt"/>
-                        <outlet property="btnReaccept" destination="CWu-gC-tlJ" id="pB5-eQ-fvl"/>
+                        <outlet property="btnLogout" destination="xNb-df-Aze" id="GSp-pw-IgD"/>
+                        <outlet property="textToken" destination="nuJ-8W-3sz" id="Bje-dz-lkB"/>
                         <segue destination="NpW-96-qzO" kind="showDetail" identifier="webv" id="7PI-0R-VOn"/>
                     </connections>
                 </viewController>
@@ -74,11 +90,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
